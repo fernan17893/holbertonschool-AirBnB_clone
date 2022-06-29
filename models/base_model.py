@@ -12,11 +12,11 @@ class BaseModel:
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
-        
+                
 
     def __str__(self):
         """ prints """
-        print (f"[BaseModel] (<self.id>) <self.__dict__>")
+        return (f"[BaseModel] (<self.id>) <self.__dict__>")
 
     def save(self):
         """ updates updated_at with current datetime """
@@ -26,7 +26,7 @@ class BaseModel:
         """ Returns disctionary representation of BaseModel """
         dic = self.__dict__.copy()
         dic[__class__] = self.name
-        dic[created_at] = self.created_at.isoformat()
-        dic[updated_at] = self.created_at.isoformat()
-        return dic
+        dic[self.created_at] = self.created_at.isoformat()
+        dic[self.updated_at] = self.updated_at.isoformat()
+        return (dic)
        
