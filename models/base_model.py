@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """ Base Model that defines all common attributes/methods for other classes """
+import models
 from datetime import datetime
 from uuid import uuid4
-import models
 
 class BaseModel:
     """ Class BaseModel """
@@ -26,7 +26,7 @@ class BaseModel:
     def save(self):
         """ updates updated_at with current datetime """
         self.updated_at = datetime.now()
-        models.storage.new()
+        models.storage.new(self)
         models.storage.save()
 
     def to_dict(self):
