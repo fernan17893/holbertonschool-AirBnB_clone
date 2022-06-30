@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
-""" Instants storage obj """
 from models.engine.file_storage import FileStorage
+""" Instants storage obj """
 
 storage = FileStorage()
 storage.reload()
