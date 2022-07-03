@@ -10,7 +10,12 @@ class FileStorage:
 
     __classes = {
         "BaseModel": BaseModel,
-        "User": User
+        "User": User,
+        "Place": Place,
+        "State": State,
+        "Amenity": Amenity,
+        "Review": Review
+        "City": City
     }
     __file_path = "file.json"
     __objects = {}

@@ -12,7 +12,12 @@ class HBNBCommand(cmd.Cmd):
 
     __classes = {
         "BaseModel": BaseModel,
-        "User": User
+        "User": User,
+        "Place": Place,
+        "State": State,
+        "Amenity": Amenity,
+        "Review": Review,
+        "City": City
     }
 
     #basic commands
