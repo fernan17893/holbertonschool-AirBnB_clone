@@ -10,6 +10,7 @@ from models.amenity import Amenity
 from models.review import Review
 from models.city import City
 
+
 class FileStorage:
     """ Class File Storage """
 
@@ -42,7 +43,7 @@ class FileStorage:
             json_file.write(json.dumps(new_dic))
 
     def reload(self):
-        """ desrializes the JSON file to _objects, if the file doesnt exist no exception should be raised """
+        """ desrializes the JSON file to _objects """
         try:
             with open(self.__file_path, mode="r", encoding='UTF-8') as f:
                 for o in json.load(f).values():

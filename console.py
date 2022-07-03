@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ Entry point of command interpreter """
-import cmd, sys
+import cmd
+import sys
 from models import storage
 from models.base_model import BaseModel
 from models.user import User
@@ -9,6 +10,7 @@ from models.state import State
 from models.amenity import Amenity
 from models.review import Review
 from models.city import City
+
 
 class HBNBCommand(cmd.Cmd):
     """Shell class for HBNB project"""
@@ -25,7 +27,7 @@ class HBNBCommand(cmd.Cmd):
         "City": City
     }
 
-    #basic commands
+    # basic commands
     def do_quit(self, args):
         """Quit the shell\n"""
         exit()
@@ -53,7 +55,7 @@ class HBNBCommand(cmd.Cmd):
         """Prints the string rep of an instance based on the class and ID\n"""
         args = arg.split()
         if arg == '':
-            print('** class name missing **') 
+            print('** class name missing **')
         elif args[0] not in self.__classes:
             print('** class doesn\'t exist **')
         elif len(args) < 2:
@@ -68,7 +70,7 @@ class HBNBCommand(cmd.Cmd):
         """Deletes an instance based on the classname and ID\n"""
         args = arg.split()
         if arg == '':
-            print('** class name missing **') 
+            print('** class name missing **')
         elif args[0] not in self.__classes:
             print('** class doesn\'t exist **')
         elif len(args) < 2:
@@ -84,13 +86,14 @@ class HBNBCommand(cmd.Cmd):
         """Prints string representation of all objects or of a certain class"""
         args = arg.split()
         if len(args) == 0:
-            l = [v.__str__() for (k, v) in storage.all().items()]
-            print(l)
+            li = [v.__str__() for (k, v) in storage.all().items()]
+            print(li)
         elif len(args) == 1 and args[0] not in self.__classes:
             print('** class doesn\'t exist **')
         else:
-            l = [v.__str__() for (k, v) in storage.all().items() if v.__class__.__name__ == args[0]]
-            print(l)
+            li = [v.__str__() for (k, v) in storage.all().items()
+                  if v.__class__.__name__ == args[0]]
+            print(li)
 
     def do_update(self, arg):
         """Use: update <class name> <id> <attribute name> <attribute value>"""
