@@ -12,4 +12,4 @@ class Testreview(unittest.TestCase):
 
     def test_class(self):
         rev1 = Review()
-        self.assertEqual(rev1.__class__.__name__, "Review"
+        self.assertEqual(rev1.__class__.__name__, "Review")

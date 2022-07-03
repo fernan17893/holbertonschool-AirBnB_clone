@@ -3,9 +3,9 @@
 import unittest
 from models.user import User
 
-class Test_User(self):
+class Test_User(unittest.TestCase):
     """ test user """
 
     def test_user(self):
-    """ Test user class """
-    
+        """ Test user class """
+        pass

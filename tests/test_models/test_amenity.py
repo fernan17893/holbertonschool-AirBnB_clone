@@ -8,6 +8,6 @@ from models.amenity import Amenity
 
 class Testamenity(unittest.TestCase):
 
-    def test_class(self)
+    def test_class(self):
         amenity1 = Amenity()
         self.assertEqual(amenity1.__class__.__name__, "Amenity")
