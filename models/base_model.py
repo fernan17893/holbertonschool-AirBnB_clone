@@ -6,7 +6,7 @@ from uuid import uuid4
 
 
 class BaseModel:
-    """ Class BaseModel """
+    """ Definition for Class BaseModel """
 
     def __init__(self, *args, **kwargs):
         """ Public instance attribute assings uuid when an instance created """
@@ -21,7 +21,7 @@ class BaseModel:
                     setattr(self, k, v)
 
     def __str__(self):
-        """ prints """
+        """ Returns string representation of object """
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
