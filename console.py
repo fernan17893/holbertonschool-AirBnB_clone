@@ -129,8 +129,9 @@ class HBNBCommand(cmd.Cmd):
                 print(li.count(cls))
             elif 'show' in command:
                 _id_ = command[6:-2]
-                arg = 'cls' + ' ' + _id_
-                self.do(arg)
+                arg = cls + ' ' + _id_
+                print(arg)
+                self.do_show(arg)
             else:
                 print(f"*** Unknown syntax: {line}")
         except Exception:
