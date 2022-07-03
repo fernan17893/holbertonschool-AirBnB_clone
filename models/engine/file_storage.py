@@ -14,7 +14,7 @@ class FileStorage:
         "Place": Place,
         "State": State,
         "Amenity": Amenity,
-        "Review": Review
+        "Review": Review,
         "City": City
     }
     __file_path = "file.json"
