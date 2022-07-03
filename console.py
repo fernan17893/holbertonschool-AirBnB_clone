@@ -99,7 +99,7 @@ class HBNBCommand(cmd.Cmd):
             name = f"{args[0]}.{args[1]}"
             obj = storage.all()[name]
             setattr(obj, args[2], args[3])
-            storage.save()
+            obj.save()
 
 
 if __name__ == '__main__':
