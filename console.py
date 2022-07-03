@@ -68,6 +68,17 @@ class HBNBCommand(cmd.Cmd):
             storage.all().pop(name)
             storage.save()
 
+    def do_all(self, arg):
+        """Prints string representation of all objects or of a certain class"""
+        args = arg.split()
+        if len(args) == 0:
+            l = [v.__str__() for (k, v) in storage.all().items()]
+            print(l)
+        elif len(args) == 1 and args[0] not in self.__classes:
+            print('** class doesn\'t exist **')
+        else:
+            l = [v.__str__() for (k, v) in storage.all().items() if arg[1] in k]
+            print(l)
 
 
 if __name__ == '__main__':
