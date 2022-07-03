@@ -6,7 +6,7 @@ import cmd, sys
 class HBNBCommand(cmd.Cmd):
     """Shell class for HBNB project"""
 
-    prompt = '(HBNB) '
+    prompt = '(hbnb) '
 
     #basic commands
     def do_quit(self, arg):
