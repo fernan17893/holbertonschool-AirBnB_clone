@@ -98,8 +98,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             name = f"{args[0]}.{args[1]}"
             obj = storage.all()[name]
-            print(obj)
-            setattr(obj, arg[2], arg[3])
+            setattr(obj, args[2], args[3])
             storage.save()
 
 
