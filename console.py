@@ -35,7 +35,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             obj = self.__classes[arg]
             storage.new(obj)
-            storage.save()
+            obj.save()
             print(obj.id)
 
     def do_show(self, arg):
@@ -80,6 +80,28 @@ class HBNBCommand(cmd.Cmd):
         else:
             l = [v.__str__() for (k, v) in storage.all().items() if arg[1] in k]
             print(l)
+
+    def do_update(self, arg):
+        """Use: update <class name> <id> <attribute name> <attribute value>"""
+        args = arg.split()
+        if len(args) == 0:
+            print('** class name missing **')
+        elif args[0] not in self.__classes:
+            print('** class doesn\'t exist **')
+        elif len(args) == 1:
+            print('** instance id missing **')
+        elif f"{args[0]}.{args[1]}" not in storage.all():
+            print('** no instance found **')
+        elif len(args) == 2:
+            print('** attribute name missing **')
+        elif len(args) == 3:
+            print('** value missing **')
+        else:
+            name = f"{args[0]}.{args[1]}"
+            obj = storage.all()[name]
+            print(obj)
+            setattr(obj, arg[2], arg[3])
+            storage.save()
 
 
 if __name__ == '__main__':
