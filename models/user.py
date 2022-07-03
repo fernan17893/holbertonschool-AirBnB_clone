@@ -4,10 +4,10 @@
 
 from models.base_model import BaseModel
 
-class user(BaseModel)
+class User(BaseModel):
     """Definition of user class"""
 
-    def __init__(email='', password='', first_name='', last_name=''):
+    def __init__(self, email='', password='', first_name='', last_name=''):
         """Method called on initialization of new user"""
         self.email = email
         self.password = password

@@ -3,6 +3,7 @@
 import cmd, sys
 from models.base_model import BaseModel
 from models import storage
+from models.user import User
 
 class HBNBCommand(cmd.Cmd):
     """Shell class for HBNB project"""
@@ -10,7 +11,8 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
 
     __classes = {
-        "BaseModel": BaseModel
+        "BaseModel": BaseModel,
+        "User": User
     }
 
     #basic commands
@@ -77,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) == 1 and args[0] not in self.__classes:
             print('** class doesn\'t exist **')
         else:
-            l = [v.__str__() for (k, v) in storage.all().items() if arg[1] in k]
+            l = [v.__str__() for (k, v) in storage.all().items() if k == arg[1]]
             print(l)
 
     def do_update(self, arg):
