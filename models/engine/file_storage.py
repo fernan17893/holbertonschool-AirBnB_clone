@@ -8,6 +8,10 @@ from models.user import User
 class FileStorage:
     """ Class File Storage """
 
+    __classes = {
+        "BaseModel": BaseModel,
+        "User": User
+    }
     __file_path = "file.json"
     __objects = {}
 
@@ -33,6 +37,6 @@ class FileStorage:
             with open(self.__file_path, mode="r", encoding='UTF-8') as f:
                 for o in json.load(f).values():
                     name = o["__class__"]
-                    self.new(eval(name)(**o))
+                    self.new(self.__classes[name](**o))
         except FileNotFoundError:
             pass
