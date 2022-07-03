@@ -30,9 +30,8 @@ class FileStorage:
         """ desrializes the JSON file to _objects, if the file doesnt exist no exception should be raised """
         try:
             with open(self.__file_path, mode="r", encoding='UTF-8') as f:
-                for o in json.load(file).values():
+                for o in json.load(f).values():
                     name = o["__class__"]
-                    del o["__class__"]
                     self.new(eval(name)(**o))
         except FileNotFoundError:
             pass
