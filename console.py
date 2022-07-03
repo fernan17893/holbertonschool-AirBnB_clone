@@ -36,6 +36,7 @@ class HBNBCommand(cmd.Cmd):
             obj = self.__classes[arg]
             storage.new(obj)
             storage.save()
+            print(obj.id)
 
     def do_show(self, arg):
         """Prints the string rep of an instance based on the class and ID\n"""
