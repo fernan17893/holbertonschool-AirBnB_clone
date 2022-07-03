@@ -10,7 +10,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
 
     __classes = {
-        "BaseModel": BaseModel()
+        "BaseModel": BaseModel
     }
 
     #basic commands
@@ -33,8 +33,7 @@ class HBNBCommand(cmd.Cmd):
         elif arg not in self.__classes:
             print('** class doesn\'t exist **')
         else:
-#            obj = self.__classes[arg]
-            obj = BaseModel()
+            obj = self.__classes[arg]()
             obj.save()
             print(obj.id)
 
