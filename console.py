@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """ Entry point of command interpreter """
 import cmd, sys
-from models.base_model import BaseModel
 from models import storage
+from models.base_model import BaseModel
 from models.user import User
+from models.place import Place
+from models.state import State
+from models.amenity import Amenity
+from models.review import Review
+from models.city import City
 
 class HBNBCommand(cmd.Cmd):
     """Shell class for HBNB project"""
