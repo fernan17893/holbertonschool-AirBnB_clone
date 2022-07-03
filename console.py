@@ -79,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) == 1 and args[0] not in self.__classes:
             print('** class doesn\'t exist **')
         else:
-            l = [v.__str__() for (k, v) in storage.all().items() if k == arg[1]]
+            l = [v.__str__() for (k, v) in storage.all().items() if v.__class__.__name__ == args[0]]
             print(l)
 
     def do_update(self, arg):
