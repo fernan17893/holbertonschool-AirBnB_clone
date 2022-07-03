@@ -1,8 +1,9 @@
-#!/usr/bin/env python3
-" Class FileStorage which serializes instances to JSON file and vice versa"
+#!/usr/bin/python3
+""" Class FileStorage which serializes instances to JSON file and vice versa"""
 import json
 import models
 from models.base_model import BaseModel
+
 
 class FileStorage:
     """ Class File Storage """
