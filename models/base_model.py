@@ -4,11 +4,12 @@ import models
 from datetime import datetime
 from uuid import uuid4
 
+
 class BaseModel:
     """ Class BaseModel """
 
     def __init__(self, *args, **kwargs):
-        """ Public instance attribute assings uuid when an instance is created """
+        """ Public instance attribute assings uuid when an instance created """
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
@@ -17,7 +18,7 @@ class BaseModel:
                 if k == "created_at" or k == "updated_at":
                     v = datetime.strptime(v, "%Y-%m-%dT%H:%M:%S.%f")
                 if k != "__class__":
-                    setattr(self, k, v)                
+                    setattr(self, k, v)
 
     def __str__(self):
         """ prints """
@@ -36,4 +37,3 @@ class BaseModel:
         dic["created_at"] = self.created_at.isoformat()
         dic["updated_at"] = self.updated_at.isoformat()
         return dic
-       
