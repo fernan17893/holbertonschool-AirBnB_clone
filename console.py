@@ -124,6 +124,9 @@ class HBNBCommand(cmd.Cmd):
             command = args[1]
             if command == 'all()':
                 self.do_all(cls)
+            if command == 'count()':
+                li = [v.__class__.__name__ for (k, v) in storage.all().items()]
+                print(li.count(cls))
         except Exception:
             print(f"*** Unknown syntax: {line}")
 
