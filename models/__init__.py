@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-
+"""Initialization file for models package"""
 
 from models.engine.file_storage import FileStorage
-""" Instants storage obj """
 
 storage = FileStorage()
 storage.reload()
