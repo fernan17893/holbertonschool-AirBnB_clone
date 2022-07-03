@@ -118,14 +118,14 @@ class HBNBCommand(cmd.Cmd):
 
     def default(self, line):
         """Method called when input does not match any do_* commands"""
-        args = line.split('.')
-        cls = args[0]
-        if len(args) > 1:
+        try:
+            args = line.split('.')
+            cls = args[0]
             command = args[1]
             if command == 'all()':
                 self.do_all(cls)
-            else:
-                print(f"*** Unknown syntax: {line}")
+        except Exception:
+            print(f"*** Unknown syntax: {line}")
 
 
 if __name__ == '__main__':
