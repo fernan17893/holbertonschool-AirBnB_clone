@@ -130,8 +130,11 @@ class HBNBCommand(cmd.Cmd):
             elif 'show' in command:
                 _id_ = command[6:-2]
                 arg = cls + ' ' + _id_
-                print(arg)
                 self.do_show(arg)
+            elif 'destroy' in command:
+                _id_ = command[9:-2]
+                arg = cls + ' ' + _id_
+                self.do_destroy(arg)
             else:
                 print(f"*** Unknown syntax: {line}")
         except Exception:
