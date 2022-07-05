@@ -43,13 +43,13 @@ quit - Exits program, can use EOF as well
  1. show <class_name>
 
  ```
- (hbnb) create BaseModel
+ (hbnb) show BaseModel
 49faff9a-6318-451f-87b6-910505c55907
 ```
 
 3. destroy <class_name>
 
 ```
-(hbnb) create BaseModel
+(hbnb) destroy BaseModel
 49faff9a-6318-451f-87b6-910505c55907
 ```
